@@ -1,2 +1,2 @@
 DELETE http://localhost:8080/posts/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJleHAiOjE3MzY5NzQ0MjQsInVzZXJJZCI6MX0._REUhk2lRb-lzAXy21Rw5-oOsGZA_RawmG4YSjKHAOs
+Authorization: 
