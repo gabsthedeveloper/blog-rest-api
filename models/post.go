@@ -8,9 +8,9 @@ import (
 
 type Post struct {
 	ID          int64
-	Title       string    `binding:"required"`
-	Description string    `binding:"required"`
-	DateTime    time.Time `binding:"required"`
+	Title       string `binding:"required"`
+	Description string `binding:"required"`
+	DateTime    time.Time
 	UserID      int64
 }
 
@@ -62,6 +62,7 @@ func (post *Post) Save() error {
 
 	defer stmt.Close()
 
+	post.DateTime = time.Now().Truncate(time.Second).UTC()
 	result, err := stmt.Exec(post.Title, post.Description, post.DateTime, post.UserID)
 	if err != nil {
 		return err
@@ -85,6 +86,7 @@ func (post Post) Update() error {
 
 	defer stmt.Close()
 
+	post.DateTime = time.Now().Truncate(time.Second).UTC()
 	_, err = stmt.Exec(post.Title, post.Description, post.DateTime, post.ID)
 	return err
 }
