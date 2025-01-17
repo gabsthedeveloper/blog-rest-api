@@ -1,2 +1,0 @@
-DELETE http://localhost:8080/posts/1/register
-Authorization: 
